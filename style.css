@@ -1,211 +1,552 @@
-/* style.css */
+/* style.css - GLASSMORPHISM VERSION - ULTRA COMPACT TRANSPARENT NAVBAR */
 
-/* General page styling */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
-/* Header navigation styling */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Base */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border-radius: 20px;
+}
+
+/* ==========================================================================
+   HEADER NAVIGATION - ULTRA COMPACT TRANSPARENT NAVBAR
+   ========================================================================== */
 header {
-  background: #2c3e50; /* dark blue background */
-  padding: 15px 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
+    padding: 4px 0;
+    box-shadow: 0 4px 20px rgba(31, 38, 135, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    box-shadow: 0 8px 30px rgba(31, 38, 135, 0.4);
+    padding: 4px 0;
 }
 
 header nav {
-  display: flex;
-  justify-content: center;
-  gap: 40px; /* spacing between links */
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 15px;
+    align-items: center;
+    height: 40px;
 }
 
 header nav a {
-  color: #ecf0f1; /* light text */
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 500;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  padding: 5px 0;
-  position: relative;
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+header nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+header nav a:hover::before {
+    left: 100%;
 }
 
 header nav a:hover {
-  color: #f1c40f; /* gold hover */
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+    border-color: rgba(255, 107, 53, 0.3);
 }
 
 header nav a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #f1c40f;
-  transition: width 0.3s;
-  margin: auto;
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    background: rgba(255, 107, 53, 0.8);
+    transition: width 0.3s;
+    margin: auto;
+    margin-top: 2px;
 }
 
 header nav a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 main {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 50px auto 0;
     padding: 20px;
 }
 
-/* Headings */
+/* ==========================================================================
+   HEADINGS - GLASS
+   ========================================================================== */
 h1 {
     text-align: center;
-    color: #2c3e50;
+    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 15px;
     font-size: 2.2em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 a {
     display: block;
     text-align: center;
     font-size: 1.2em;
-    color: #555;
+    color: rgba(255,255,255,0.9);
     margin-bottom: 30px;
     text-decoration: none;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #f1c40f;
+    background: rgba(255, 107, 53, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+    color: #fff !important;
 }
 
-/* Info section */
+/* ==========================================================================
+   INFO SECTION - GLASS CARDS
+   ========================================================================== */
+section#Info {
+    margin-bottom: 50px;
+}
+
 section#Info p {
     margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255,255,255,0.95);
 }
 
-/* Card styling for family members */
+/* ==========================================================================
+   FAMILY MEMBER CARDS - GLASS
+   ========================================================================== */
 h2 {
-    margin-top: 30px;
+    margin-top: 40px;
     font-size: 1.6em;
-    color: #34495e;
+    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
 }
 
 h2 + p {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-top: 10px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    transition: all 0.4s ease;
+    max-width: 800px;
+    color: rgba(255,255,255,0.95);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
-/* Hover effect */
 h2 + p:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    border-color: rgba(255, 107, 53, 0.4);
 }
 
-/* Responsive layout for cards */
-@media (min-width: 768px) {
-    h2 + p {
-        display: inline-block;
-        width: 46%;
-        margin: 15px 2%;
-        vertical-align: top;
-    }
-}
-
-/* Gallery styling */
+/* ==========================================================================
+   GALLERY - GLASS GRID (UPDATED WITH GLASS IMAGES)
+   ========================================================================== */
 #Gallery {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
+    margin: 60px auto;
+    padding: 40px 20px;
     text-align: center;
 }
 
 #Gallery h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    font-size: 2.5em;
 }
 
 #Gallery p {
-    color: #555;
-    margin-bottom: 25px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Gallery grid layout */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-/* Image cards with fixed size */
+/* GLASSMORPHISM IMAGE CARDS - FULL GLASS EFFECT */
 .gallery-grid img {
     width: 100%;
-    height: 250px; /* fixed height */
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    object-fit: cover; /* ensures image fills box neatly */
+    height: 280px;
+    border-radius: 20px;
+    /* Full glassmorphism effect */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.37),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Hover effect for images */
+.gallery-grid img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(135deg, 
+            rgba(255, 107, 53, 0.15), 
+            rgba(102, 126, 234, 0.15),
+            rgba(255, 255, 255, 0.1)
+        );
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+.gallery-grid img::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
 .gallery-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 
+        0 25px 50px rgba(31, 38, 135, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(30px) saturate(200%);
+    border-color: rgba(255, 107, 53, 0.4);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #Gallery {
-        padding: 20px 10px;
+.gallery-grid img:hover::before {
+    opacity: 1;
+}
+
+.gallery-grid img:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT FOR CARDS
+   ========================================================================== */
+@media (min-width: 768px) {
+    h2 + p {
+        display: inline-block;
+        width: 48%;
+        margin: 20px 1%;
     }
-    .gallery-grid img {
-        height: 200px; /* slightly smaller on mobile */
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
-
-/* Footer styling */
+/* ==========================================================================
+   FOOTER - GLASS
+   ========================================================================== */
 footer {
-    background: #2c3e50;
-    color: #ecf0f1;
-    padding: 40px 20px 20px;
-    margin-top: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(25px);
+    color: rgba(255,255,255,0.95);
+    padding: 50px 20px 30px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     max-width: 1100px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .footer-container div {
-    flex: 1;
-    min-width: 250px;
-    margin: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.footer-container div:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .footer-container h3 {
-    margin-bottom: 15px;
-    color: #f1c40f;
-    font-size: 1.2em;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.3em;
 }
 
 .footer-container p,
 .footer-container ul {
     font-size: 0.95em;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+}
+
+.footer-container ul {
+    list-style: none;
+}
+
+.footer-container ul li {
+    margin-bottom: 10px;
+}
+
+.footer-container ul li a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    display: block;
+    border-radius: 10px;
+}
+
+.footer-container ul li a:hover {
+    color: #ff6b35;
+    background: rgba(255,107,53,0.1);
+    padding-left: 10px;
 }
 
 /* Footer bottom */
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid #34495e;
-    margin-top: 25px;
-    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 30px;
+    padding-top: 20px;
     font-size: 0.9em;
-    color: #bdc3c7;
+    color: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 0 20px;
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN - ULTRA COMPACT MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 3px 0;
+    }
+    
+    header nav {
+        gap: 10px;
+        padding: 0 10px;
+        height: 36px;
+    }
+    
+    header nav a {
+        padding: 4px 10px;
+        font-size: 0.9em;
+        min-height: 24px;
+    }
+    
+    main {
+        margin-top: 45px;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    #Gallery {
+        padding: 30px 15px;
+        margin: 40px auto;
+    }
+    
+    .gallery-grid img {
+        height: 220px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav {
+        gap: 8px;
+    }
+    
+    header nav a {
+        padding: 4px 8px;
+        font-size: 0.85em;
+    }
+    
+    main {
+        margin-top: 42px;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .gallery-grid img {
+        height: 200px;
+    }
+    
+    footer {
+        padding: 40px 15px 20px;
+    }
+}
+
+/* ==========================================================================
+   CUSTOM SCROLLBAR
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(255,107,53,0.5), rgba(247,147,30,0.5));
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, rgba(255,107,53,0.7), rgba(247,147,30,0.7));
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
